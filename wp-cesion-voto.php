@@ -57,13 +57,13 @@ function wp_cesion_voto_shortcode($params = array(), $content = null) {
     $showform = false;
     $user = jolasetaGetByHash($_GET['hash']);
     if($user) {
-      if(!jolasetaHasVoted($_GET['hash'])) {
-        echo sprintf(__("Yo, %s, con DNI/NIE %s delego %s lorem ipsum dolor sit amet, consectetur adipiscing elit, ...", 'wp-cesion-voto') , $user[0], $user[2], ($user[4] > 1 ? "mis ".$user[4]." votos" : "mi único voto")); ?>
-        <hr/>
-        <form method="post" action="<?=get_the_permalink();?>">
+      if(!jolasetaHasVoted($_GET['hash'])) { ?>
+        <p><?=sprintf(__("Yo, %s, con DNI/NIE %s lorem ipsum dolor sit amet, consectetur adipiscing elit, ...", 'wp-cesion-voto') , $user[0], $user[2]); ?></p>
+        <div class="delego"><?php printf(__("Delego %s a:", 'wp-cesion-voto'), ($user[4] > 1 ? "mis ".$user[4]." votos" : "mi voto")); ?></div>
+        <form class="delego" method="post" action="<?=get_the_permalink();?>">
           <input type="hidden" name="hash" value="<?=strip_tags($user[5])?>" />
-          <input type="submit" name="Lecanda" value="<?php printf(__("Delego mi voto a %s", 'wp-cesion-voto'), "D. Fernando Lecanda Garamendi"); ?>">
-          <br/><input type="submit" name="Castellanos" value="<?php printf(__("Delego mi voto a %s", 'wp-cesion-voto'), "D. Diego Castellanos Maruri"); ?>">
+          <input type="submit" name="Lecanda" value="<?php echo "D. Fernando Lecanda Garamendi"; ?>">
+          <br/><input type="submit" name="Castellanos" value="<?php echo "D. Diego Castellanos Maruri"; ?>">
           <?php /* <br/><a href="#">DELEGO MI VOTO A OTRO ACCIONISTA DE MI ELECCIÓN</a>*/ ?>
         <form>
         <?php
@@ -99,10 +99,10 @@ function wp_cesion_voto_shortcode($params = array(), $content = null) {
   if($showform) { ?>
     <?=apply_filters("the_content", $content);?>
     <form method="post">
-      <label><?php _e("Email", 'wp-cesion-voto'); ?>: <br/>
+      <label><b><?php _e("Email", 'wp-cesion-voto'); ?>:</b><br/>
         <input type="email" name="email" value="" required></label><br/>
-      <label><?php _e("DNI/NIE", 'wp-cesion-voto'); ?>: <br/>
-        <input type="text" name="dni" value="" required></label><br/>
+      <label><b><?php _e("DNI/NIE", 'wp-cesion-voto'); ?>:</b><br/>
+        <input type="text" name="dni" value="" required></label><br/><br/>
       <input type="submit" name="enviar" value="<?php _e("Enviar", 'wp-cesion-voto'); ?>">
     </form>
   <?php } ?>
@@ -126,6 +126,29 @@ function wp_cesion_voto_shortcode($params = array(), $content = null) {
       padding: 5px;
       border: 1px solid orange;
       font-weight: 700;
+    }
+
+    div.delego {
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+      padding: 10px 10px 30px 10px;
+    }
+
+    form.delego {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    form.delego input[type=submit] {
+        width: calc(100% - 10px);
+      }
+
+    @media (min-width: 900px) {
+      form.delego input[type=submit] {
+        width: calc(50% - 10px);
+      }
     }
 
   </style>
