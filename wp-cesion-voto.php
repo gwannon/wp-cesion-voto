@@ -81,11 +81,7 @@ function wp_cesion_voto_shortcode($params = array(), $content = null) {
             $showform = false;
 
             $url = get_the_permalink()."?hash=".$hash;
-            $message = sprintf(__("Estimado Sr %s<br/><br/>
-            Gracias por tramitar la delegación de la representación de sus acciones.<br/><br/>
-            Mediante este <a href='%s'>enlace único</a> Ud. podrá delegar la representación de sus acciones a D. Fernando Lecanda Garamendi, con DNI 16036142J, Presidente del Consejo de Administración de Jolaseta S.A; o bien a D. Diego Castellanos Maruri, con DNI 16049155P, Presidente del Real Club Jolaseta.<br/><br/>
-            En el caso de desear delegar la representación de sus acciones a otro accionista de su elección, puede descargar el siguiente <a href='#'>formulario de delegación</a>, cumplimentándolo debidamente y entregándolo en la Administración del Club o bien enviándolo por correo electrónico a <a href='mailto:registro@jolaseta.com'>registro@jolaseta.com</a>.<br/><br/>
-            Muchas gracias", 'wp-cesion-votos'), $user[0], $url);
+            $message = sprintf(__("Estimado Sr %s<br/><br/>Gracias por tramitar la delegación de la representación de sus acciones.<br/><br/>Mediante este <a href='%s'>enlace único</a> Ud. podrá delegar la representación de sus acciones a D. Fernando Lecanda Garamendi, con DNI 16036142J, Presidente del Consejo de Administración de Jolaseta S.A; o bien a D. Diego Castellanos Maruri, con DNI 16049155P, Presidente del Real Club Jolaseta.<br/><br/>En el caso de desear delegar la representación de sus acciones a otro accionista de su elección, puede descargar el siguiente <a href='#'>formulario de delegación</a>, cumplimentándolo debidamente y entregándolo en la Administración del Club o bien enviándolo por correo electrónico a <a href='mailto:registro@jolaseta.com'>registro@jolaseta.com</a>.<br/><br/>Muchas gracias", 'wp-cesion-votos'), $user[0], $url);
             $headers = array('Content-Type: text/html; charset=UTF-8');
             wp_mail($_POST['email'], __("AMPLIACIÓN DE CAPITAL DE JOLASETA SA", 'wp-cesion-voto'), $message, $headers);
 
@@ -101,13 +97,13 @@ function wp_cesion_voto_shortcode($params = array(), $content = null) {
   }
 
   if($showform) { ?>
-    <p><?=$content;?></p>
+    <?=apply_filters("the_content", $content);?>
     <form method="post">
-      <label>Email: <br/>
-        <input type="email" name="email" value=""></label><br/>
-      <label>DNI/NIE: <br/>
-        <input type="text" name="dni" value=""></label><br/>
-      <input type="submit" name="enviar" value="Enviar">
+      <label><?php _e("Email", 'wp-cesion-voto'); ?>: <br/>
+        <input type="email" name="email" value="" required></label><br/>
+      <label><?php _e("DNI/NIE", 'wp-cesion-voto'); ?>: <br/>
+        <input type="text" name="dni" value="" required></label><br/>
+      <input type="submit" name="enviar" value="<?php _e("Enviar", 'wp-cesion-voto'); ?>">
     </form>
   <?php } ?>
   <style>

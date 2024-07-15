@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wp-cesion-voto\n"
-"POT-Creation-Date: 2024-07-15 13:19+0200\n"
-"PO-Revision-Date: 2024-07-15 13:19+0200\n"
+"POT-Creation-Date: 2024-07-15 13:34+0200\n"
+"PO-Revision-Date: 2024-07-15 13:34+0200\n"
 "Last-Translator: \n"
 "Language-Team: jorge@enutt.net\n"
 "Language: es_ES\n"
@@ -58,11 +58,11 @@ msgid ""
 "satisfactoriamente a %s.<br/><br/>Muchas gracias"
 msgstr ""
 
-#: ../wp-cesion-voto.php:46 ../wp-cesion-voto.php:51 ../wp-cesion-voto.php:90
+#: ../wp-cesion-voto.php:46 ../wp-cesion-voto.php:51 ../wp-cesion-voto.php:86
 msgid "AMPLIACIÓN DE CAPITAL DE JOLASETA SA"
 msgstr ""
 
-#: ../wp-cesion-voto.php:55 ../wp-cesion-voto.php:70 ../wp-cesion-voto.php:95
+#: ../wp-cesion-voto.php:55 ../wp-cesion-voto.php:70 ../wp-cesion-voto.php:91
 msgid "Ya has delegado tu voto con anterioridad."
 msgstr ""
 
@@ -85,37 +85,45 @@ msgstr ""
 #: ../wp-cesion-voto.php:84
 #, php-format
 msgid ""
-"Estimado Sr %s<br/><br/>\n"
-"            Gracias por tramitar la delegación de la representación de sus "
-"acciones.<br/><br/>\n"
-"            Mediante este <a href='%s'>enlace único</a> Ud. podrá delegar la "
-"representación de sus acciones a D. Fernando Lecanda Garamendi, con DNI "
-"16036142J, Presidente del Consejo de Administración de Jolaseta S.A; o bien "
-"a D. Diego Castellanos Maruri, con DNI 16049155P, Presidente del Real Club "
-"Jolaseta.<br/><br/>\n"
-"            En el caso de desear delegar la representación de sus acciones a "
-"otro accionista de su elección, puede descargar el siguiente <a "
-"href='#'>formulario de delegación</a>, cumplimentándolo debidamente y "
-"entregándolo en la Administración del Club o bien enviándolo por correo "
-"electrónico a <a href='mailto:registro@jolaseta.com'>registro@jolaseta.com</"
-"a>.<br/><br/>\n"
-"            Muchas gracias"
+"Estimado Sr %s<br/><br/>Gracias por tramitar la delegación de la "
+"representación de sus acciones.<br/><br/>Mediante este <a href='%s'>enlace "
+"único</a> Ud. podrá delegar la representación de sus acciones a D. Fernando "
+"Lecanda Garamendi, con DNI 16036142J, Presidente del Consejo de "
+"Administración de Jolaseta S.A; o bien a D. Diego Castellanos Maruri, con "
+"DNI 16049155P, Presidente del Real Club Jolaseta.<br/><br/>En el caso de "
+"desear delegar la representación de sus acciones a otro accionista de su "
+"elección, puede descargar el siguiente <a href='#'>formulario de delegación</"
+"a>, cumplimentándolo debidamente y entregándolo en la Administración del "
+"Club o bien enviándolo por correo electrónico a <a href='mailto:"
+"registro@jolaseta.com'>registro@jolaseta.com</a>.<br/><br/>Muchas gracias"
 msgstr ""
 
-#: ../wp-cesion-voto.php:93
+#: ../wp-cesion-voto.php:89
 msgid ""
 "Hemos enviado un email a tu correo con instrucciones para hacer la cesión de "
 "votos."
 msgstr ""
 
-#: ../wp-cesion-voto.php:98
+#: ../wp-cesion-voto.php:94
 msgid "No hemos encontrado tus datos en nuestra base de datos."
 msgstr ""
 
-#: ../wp-cesion-voto.php:99
+#: ../wp-cesion-voto.php:95
 msgid "Documento de identificación incorrecto"
 msgstr ""
 
-#: ../wp-cesion-voto.php:100
+#: ../wp-cesion-voto.php:96
 msgid "Email incorrecto"
+msgstr ""
+
+#: ../wp-cesion-voto.php:102
+msgid "Email"
+msgstr ""
+
+#: ../wp-cesion-voto.php:104
+msgid "DNI/NIE"
+msgstr ""
+
+#: ../wp-cesion-voto.php:106
+msgid "Enviar"
 msgstr ""
