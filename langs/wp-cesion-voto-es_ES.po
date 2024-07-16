@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wp-cesion-voto\n"
-"POT-Creation-Date: 2024-07-15 14:10+0200\n"
-"PO-Revision-Date: 2024-07-15 14:12+0200\n"
+"POT-Creation-Date: 2024-07-16 10:04+0200\n"
+"PO-Revision-Date: 2024-07-16 10:04+0200\n"
 "Last-Translator: \n"
 "Language-Team: jorge@enutt.net\n"
 "Language: es_ES\n"
@@ -58,31 +58,39 @@ msgid ""
 "satisfactoriamente a %s.<br/><br/>Muchas gracias"
 msgstr ""
 
-#: ../wp-cesion-voto.php:46 ../wp-cesion-voto.php:51 ../wp-cesion-voto.php:86
+#: ../wp-cesion-voto.php:45 ../wp-cesion-voto.php:46 ../wp-cesion-voto.php:69
+msgid "D. Fernando Lecanda Garamendi"
+msgstr ""
+
+#: ../wp-cesion-voto.php:48 ../wp-cesion-voto.php:55 ../wp-cesion-voto.php:91
 msgid "AMPLIACIÓN DE CAPITAL DE JOLASETA SA"
 msgstr ""
 
-#: ../wp-cesion-voto.php:55 ../wp-cesion-voto.php:70 ../wp-cesion-voto.php:91
+#: ../wp-cesion-voto.php:52 ../wp-cesion-voto.php:53 ../wp-cesion-voto.php:70
+msgid "D. Diego Castellanos Maruri"
+msgstr ""
+
+#: ../wp-cesion-voto.php:59 ../wp-cesion-voto.php:74
 msgid "Ya has delegado tu voto con anterioridad."
 msgstr ""
 
-#: ../wp-cesion-voto.php:61
+#: ../wp-cesion-voto.php:65
 #, php-format
 msgid ""
 "Yo, %s, con DNI/NIE %s lorem ipsum dolor sit amet, consectetur adipiscing "
 "elit, ..."
 msgstr ""
 
-#: ../wp-cesion-voto.php:62
+#: ../wp-cesion-voto.php:66
 #, php-format
 msgid "Delego %s a:"
 msgstr ""
 
-#: ../wp-cesion-voto.php:71
+#: ../wp-cesion-voto.php:75
 msgid "Validación incorrecta."
 msgstr ""
 
-#: ../wp-cesion-voto.php:84
+#: ../wp-cesion-voto.php:88
 #, php-format
 msgid ""
 "Estimado Sr %s<br/><br/>Gracias por tramitar la delegación de la "
@@ -98,32 +106,36 @@ msgid ""
 "registro@jolaseta.com'>registro@jolaseta.com</a>.<br/><br/>Muchas gracias"
 msgstr ""
 
-#: ../wp-cesion-voto.php:89
+#: ../wp-cesion-voto.php:94
 msgid ""
-"Hemos enviado un email a tu correo con instrucciones para hacer la cesión de "
+"Hemos enviado un email a su correo con instrucciones para hacer la cesión de "
 "votos."
 msgstr ""
 
-#: ../wp-cesion-voto.php:94
-msgid "No hemos encontrado tus datos en nuestra base de datos."
+#: ../wp-cesion-voto.php:96
+msgid "Ya ha delegado su voto con anterioridad."
 msgstr ""
 
-#: ../wp-cesion-voto.php:95
+#: ../wp-cesion-voto.php:99
+msgid "No hemos encontrado sus datos en nuestra base de datos."
+msgstr ""
+
+#: ../wp-cesion-voto.php:100
 msgid "Documento de identificación incorrecto"
 msgstr ""
 
-#: ../wp-cesion-voto.php:96
+#: ../wp-cesion-voto.php:101
 msgid "Email incorrecto"
 msgstr ""
 
-#: ../wp-cesion-voto.php:102
+#: ../wp-cesion-voto.php:107
 msgid "Email"
 msgstr ""
 
-#: ../wp-cesion-voto.php:104
+#: ../wp-cesion-voto.php:109
 msgid "DNI/NIE"
 msgstr ""
 
-#: ../wp-cesion-voto.php:106
+#: ../wp-cesion-voto.php:111
 msgid "Enviar"
 msgstr ""
