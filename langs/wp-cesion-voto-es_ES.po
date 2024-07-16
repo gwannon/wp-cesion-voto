@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wp-cesion-voto\n"
-"POT-Creation-Date: 2024-07-16 10:04+0200\n"
-"PO-Revision-Date: 2024-07-16 10:04+0200\n"
+"POT-Creation-Date: 2024-07-16 12:58+0200\n"
+"PO-Revision-Date: 2024-07-16 12:58+0200\n"
 "Last-Translator: \n"
 "Language-Team: jorge@enutt.net\n"
 "Language: es_ES\n"
@@ -54,15 +54,15 @@ msgstr ""
 #: ../wp-cesion-voto.php:42
 #, php-format
 msgid ""
-"Estimado Sr %s<br/><br/>La representación de sus acciones ha sido delegada "
-"satisfactoriamente a %s.<br/><br/>Muchas gracias"
+"Estimado Sr/Sra %s<br/><br/>La representación de sus acciones ha sido "
+"delegada satisfactoriamente a %s.<br/><br/>Muchas gracias"
 msgstr ""
 
 #: ../wp-cesion-voto.php:45 ../wp-cesion-voto.php:46 ../wp-cesion-voto.php:69
 msgid "D. Fernando Lecanda Garamendi"
 msgstr ""
 
-#: ../wp-cesion-voto.php:48 ../wp-cesion-voto.php:55 ../wp-cesion-voto.php:91
+#: ../wp-cesion-voto.php:48 ../wp-cesion-voto.php:55 ../wp-cesion-voto.php:90
 msgid "AMPLIACIÓN DE CAPITAL DE JOLASETA SA"
 msgstr ""
 
@@ -70,8 +70,10 @@ msgstr ""
 msgid "D. Diego Castellanos Maruri"
 msgstr ""
 
-#: ../wp-cesion-voto.php:59 ../wp-cesion-voto.php:74
-msgid "Ya has delegado tu voto con anterioridad."
+#: ../wp-cesion-voto.php:59 ../wp-cesion-voto.php:73 ../wp-cesion-voto.php:95
+msgid ""
+"Lo sentimos, ya ha delegado la represenación de sus acciones con "
+"anterioridad."
 msgstr ""
 
 #: ../wp-cesion-voto.php:65
@@ -82,18 +84,17 @@ msgid ""
 msgstr ""
 
 #: ../wp-cesion-voto.php:66
-#, php-format
-msgid "Delego %s a:"
+msgid "Delego la representación de mis acciones a:"
 msgstr ""
 
-#: ../wp-cesion-voto.php:75
-msgid "Validación incorrecta."
+#: ../wp-cesion-voto.php:74
+msgid "Lo sentimos, el código de validación es incorrecto."
 msgstr ""
 
-#: ../wp-cesion-voto.php:88
+#: ../wp-cesion-voto.php:87
 #, php-format
 msgid ""
-"Estimado Sr %s<br/><br/>Gracias por tramitar la delegación de la "
+"Estimado Sr/Sra %s<br/><br/>Gracias por tramitar la delegación de la "
 "representación de sus acciones.<br/><br/>Mediante este <a href='%s'>enlace "
 "único</a> Ud. podrá delegar la representación de sus acciones a D. Fernando "
 "Lecanda Garamendi, con DNI 16036142J, Presidente del Consejo de "
@@ -106,36 +107,32 @@ msgid ""
 "registro@jolaseta.com'>registro@jolaseta.com</a>.<br/><br/>Muchas gracias"
 msgstr ""
 
-#: ../wp-cesion-voto.php:94
+#: ../wp-cesion-voto.php:93
 msgid ""
-"Hemos enviado un email a su correo con instrucciones para hacer la cesión de "
-"votos."
+"Hemos enviado un email a su correo con instrucciones para delegar la "
+"representación de sus acciones."
 msgstr ""
 
-#: ../wp-cesion-voto.php:96
-msgid "Ya ha delegado su voto con anterioridad."
+#: ../wp-cesion-voto.php:98
+msgid "Lo sentimos, no hemos encontrado sus datos en nuestra base de datos."
 msgstr ""
 
 #: ../wp-cesion-voto.php:99
-msgid "No hemos encontrado sus datos en nuestra base de datos."
+msgid "Lo sentimos, el documento de identificación es incorrecto."
 msgstr ""
 
 #: ../wp-cesion-voto.php:100
-msgid "Documento de identificación incorrecto"
+msgid "Lo sentimos, el mail es incorrecto."
 msgstr ""
 
-#: ../wp-cesion-voto.php:101
-msgid "Email incorrecto"
-msgstr ""
-
-#: ../wp-cesion-voto.php:107
+#: ../wp-cesion-voto.php:106
 msgid "Email"
 msgstr ""
 
-#: ../wp-cesion-voto.php:109
+#: ../wp-cesion-voto.php:108
 msgid "DNI/NIE"
 msgstr ""
 
-#: ../wp-cesion-voto.php:111
+#: ../wp-cesion-voto.php:110
 msgid "Enviar"
 msgstr ""

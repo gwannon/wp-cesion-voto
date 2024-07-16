@@ -39,7 +39,7 @@ function wp_cesion_voto_shortcode($params = array(), $content = null) {
     if(!jolasetaHasVoted($_POST['hash'])) {
       $user = jolasetaGetByHash($_POST['hash']);
       $headers = array('Content-Type: text/html; charset=UTF-8');
-      $message = __("Estimado Sr %s<br/><br/>La representación de sus acciones ha sido delegada satisfactoriamente a %s.<br/><br/>Muchas gracias", 'wp-cesion-voto');
+      $message = __("Estimado Sr/Sra %s<br/><br/>La representación de sus acciones ha sido delegada satisfactoriamente a %s.<br/><br/>Muchas gracias", 'wp-cesion-voto');
 
       if(isset($_POST['Lecanda'])) {
         echo "<p class='ok'>".sprintf($message, $user[0], __("D. Fernando Lecanda Garamendi", 'wp-cesion-voto'))."</p>";
@@ -56,23 +56,22 @@ function wp_cesion_voto_shortcode($params = array(), $content = null) {
         $user[] = "D. Diego Castellanos Maruri";
         jolasetaInsertVote($user);
       }
-    } else echo "<p class='error'>".__("Ya has delegado tu voto con anterioridad.", 'wp-cesion-voto')."</p>";
+    } else echo "<p class='error'>".__("Lo sentimos, ya ha delegado la represenación de sus acciones con anterioridad.", 'wp-cesion-voto')."</p>";
   } else if(isset($_GET['hash']) && $_GET['hash'] != '') {
     $showform = false;
     $user = jolasetaGetByHash($_GET['hash']);
     if($user) {
       if(!jolasetaHasVoted($_GET['hash'])) { ?>
         <p><?=sprintf(__("Yo, %s, con DNI/NIE %s lorem ipsum dolor sit amet, consectetur adipiscing elit, ...", 'wp-cesion-voto') , $user[0], $user[2]); ?></p>
-        <div class="delego"><?php printf(__("Delego %s a:", 'wp-cesion-voto'), ($user[4] > 1 ? "mis ".$user[4]." votos" : "mi voto")); ?></div>
+        <div class="delego"><?php _e("Delego la representación de mis acciones a:", 'wp-cesion-voto'); ?></div>
         <form class="delego" method="post" action="<?=get_the_permalink();?>">
           <input type="hidden" name="hash" value="<?=strip_tags($user[5])?>" />
           <input type="submit" name="Lecanda" value="<?php _e("D. Fernando Lecanda Garamendi", 'wp-cesion-voto'); ?>">
           <br/><input type="submit" name="Castellanos" value="<?php _e("D. Diego Castellanos Maruri", 'wp-cesion-voto'); ?>">
-          <?php /* <br/><a href="#">DELEGO MI VOTO A OTRO ACCIONISTA DE MI ELECCIÓN</a>*/ ?>
         <form>
         <?php
-      } else echo "<p class='error'>".__("Ya has delegado tu voto con anterioridad.", 'wp-cesion-voto')."</p>";
-    } else echo "<p class='error'>".__("Validación incorrecta.", 'wp-cesion-voto')."</p>";
+      } else echo "<p class='error'>".__("Lo sentimos, ya ha delegado la represenación de sus acciones con anterioridad.", 'wp-cesion-voto')."</p>";
+    } else echo "<p class='error'>".__("Lo sentimos, el código de validación es incorrecto.", 'wp-cesion-voto')."</p>";
   }
 
   if(isset($_POST['enviar']) && $_POST['enviar'] != '') {
@@ -85,20 +84,20 @@ function wp_cesion_voto_shortcode($params = array(), $content = null) {
             $showform = false;
 
             $url = get_the_permalink()."?hash=".$hash;
-            $message = sprintf(__("Estimado Sr %s<br/><br/>Gracias por tramitar la delegación de la representación de sus acciones.<br/><br/>Mediante este <a href='%s'>enlace único</a> Ud. podrá delegar la representación de sus acciones a D. Fernando Lecanda Garamendi, con DNI 16036142J, Presidente del Consejo de Administración de Jolaseta S.A; o bien a D. Diego Castellanos Maruri, con DNI 16049155P, Presidente del Real Club Jolaseta.<br/><br/>En el caso de desear delegar la representación de sus acciones a otro accionista de su elección, puede descargar el siguiente <a href='#'>formulario de delegación</a>, cumplimentándolo debidamente y entregándolo en la Administración del Club o bien enviándolo por correo electrónico a <a href='mailto:registro@jolaseta.com'>registro@jolaseta.com</a>.<br/><br/>Muchas gracias", 'wp-cesion-votos'), $user[0], $url);
+            $message = sprintf(__("Estimado Sr/Sra %s<br/><br/>Gracias por tramitar la delegación de la representación de sus acciones.<br/><br/>Mediante este <a href='%s'>enlace único</a> Ud. podrá delegar la representación de sus acciones a D. Fernando Lecanda Garamendi, con DNI 16036142J, Presidente del Consejo de Administración de Jolaseta S.A; o bien a D. Diego Castellanos Maruri, con DNI 16049155P, Presidente del Real Club Jolaseta.<br/><br/>En el caso de desear delegar la representación de sus acciones a otro accionista de su elección, puede descargar el siguiente <a href='#'>formulario de delegación</a>, cumplimentándolo debidamente y entregándolo en la Administración del Club o bien enviándolo por correo electrónico a <a href='mailto:registro@jolaseta.com'>registro@jolaseta.com</a>.<br/><br/>Muchas gracias", 'wp-cesion-votos'), $user[0], $url);
             $message = str_replace("[MESSAGE]", $message, file_get_contents(__DIR__."/email.html"));
             $headers = array('Content-Type: text/html; charset=UTF-8');
             wp_mail($_POST['email'], __("AMPLIACIÓN DE CAPITAL DE JOLASETA SA", 'wp-cesion-voto'), $message, $headers);
 
             
-            echo "<p class='advise'>".__("Hemos enviado un email a su correo con instrucciones para hacer la cesión de votos.", 'wp-cesion-voto')."</p>";
+            echo "<p class='advise'>".__("Hemos enviado un email a su correo con instrucciones para delegar la representación de sus acciones.", 'wp-cesion-voto')."</p>";
           } else {
-            echo "<p class='error'>".__("Ya ha delegado su voto con anterioridad.", 'wp-cesion-voto')."</p>";
+            echo "<p class='error'>".__("Lo sentimos, ya ha delegado la represenación de sus acciones con anterioridad.", 'wp-cesion-voto')."</p>";
             $showform = false;
           }
-        } else echo "<p class='error'>".__("No hemos encontrado sus datos en nuestra base de datos.", 'wp-cesion-voto')."</p>";
-      } else echo "<p class='error'>".__("Documento de identificación incorrecto", 'wp-cesion-voto')."</p>";
-    } else echo "<p class='error'>".__("Email incorrecto", 'wp-cesion-voto')."</p>";
+        } else echo "<p class='error'>".__("Lo sentimos, no hemos encontrado sus datos en nuestra base de datos.", 'wp-cesion-voto')."</p>";
+      } else echo "<p class='error'>".__("Lo sentimos, el documento de identificación es incorrecto.", 'wp-cesion-voto')."</p>";
+    } else echo "<p class='error'>".__("Lo sentimos, el mail es incorrecto.", 'wp-cesion-voto')."</p>";
   }
 
   if($showform) { ?>
