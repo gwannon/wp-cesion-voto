@@ -62,13 +62,20 @@ function wp_cesion_voto_shortcode($params = array(), $content = null) {
     $user = jolasetaGetByHash($_GET['hash']);
     if($user) {
       if(!jolasetaHasVoted($_GET['hash'])) { ?>
-        <p><?=sprintf(__("Yo, %s, con DNI/NIE %s lorem ipsum dolor sit amet, consectetur adipiscing elit, ...", 'wp-cesion-voto') , $user[0], $user[2]); ?></p>
-        <div class="delego"><?php _e("Delego la representación de mis acciones a:", 'wp-cesion-voto'); ?></div>
+        <h3 style="font-weight: bold;"><?php _e("PODER DE REPRESENTACIÓN ESPECIAL PARA LA JUNTA GENERAL DE JOLASETA, S.A.", 'wp-cesion-voto'); ?></h3>
+        <p><?=sprintf(__("<b>%s</b>, mayor de edad, con DNI/NIE nº <b>%s</b>, en su condición de accionista de JOLASETA, S.A., delega su representación para la Junta General Extraordinaria de accionistas de JOLASETA, S.A., que está prevista que se celebre en el domicilio social el día 25 de septiembre de 2024, a las 13 horas en primera convocatoria, y al día siguiente, 26 de septiembre de 2024, en el mismo lugar y hora, en segunda convocatoria, para tratar de los asuntos incluidos en el siguiente orden del día:", 'wp-cesion-voto') , $user[0], $user[2]); ?></p>
+        <p><?php _e("Primero.-Ampliación de capital en la cantidad de 6.310,63 euros mediante aportaciones dinerarias y consiguiente modificación del artículo 5º de los Estatutos sociales.", 'wp-cesion-voto'); ?></p>
+        <p><?php _e("Segundo.- Delegación de facultades.", 'wp-cesion-voto'); ?></p>
+        <p><?php _e("Tercero.- Aprobación del acta.", 'wp-cesion-voto'); ?></p>
+        <p><?php _e("En virtud del presente apoderamiento, el representante queda facultado para ejercitar, sin limitación, todos los derechos que asisten al poderdante en el seno de dicha Junta General, entre otros, y sin carácter limitativo (i) aceptar la celebración de la Junta, así como los puntos del orden del día; (ii) tratar los puntos contenidos en el antedicho orden del día, así como cualesquiera otros que, conforme a la legislación vigente, puedan ser incluidos en el mismo por acuerdo de los socios; y (iii) ejercer el derecho de voto, pudiendo verificarse éste en la forma que el representante estime conveniente.
+", 'wp-cesion-voto'); ?></p>
+        <p><b><?php _e("Delega su representación en favor de:", 'wp-cesion-voto'); ?></b></p>
         <form class="delego" method="post" action="<?=get_the_permalink();?>">
           <input type="hidden" name="hash" value="<?=strip_tags($user[5])?>" />
-          <input type="submit" name="Lecanda" value="<?php _e("D. Fernando Lecanda Garamendi", 'wp-cesion-voto'); ?>">
-          <br/><input type="submit" name="Castellanos" value="<?php _e("D. Diego Castellanos Maruri", 'wp-cesion-voto'); ?>">
+          <input type="submit" name="Lecanda" value="<?php _e("D. Fernando Lecanda Garamendi, con DNI 16036142J, Presidente del Consejo de Administración de Jolaseta S.A.", 'wp-cesion-voto'); ?>">
+          <br/><input type="submit" name="Castellanos" value="<?php _e("D. Diego Castellanos Maruri, con DNI 16049155P, Presidente del Real Club Jolaseta", 'wp-cesion-voto'); ?>">
         <form>
+        <p><?php echo sprintf(__("Y para que surta los efectos oportunos, suscribe el presente documento en Getxo, a %d de %s de 2024.", 'wp-cesion-voto'),  date_i18n("d"),  date_i18n("F") ); ?></p>
         <?php
       } else echo "<p class='error'>".__("Lo sentimos, ya ha delegado la represenación de sus acciones con anterioridad.", 'wp-cesion-voto')."</p>";
     } else echo "<p class='error'>".__("Lo sentimos, el código de validación es incorrecto.", 'wp-cesion-voto')."</p>";
@@ -139,27 +146,10 @@ function wp_cesion_voto_shortcode($params = array(), $content = null) {
       padding: 10px 10px 30px 10px;
     }
 
-    form.logeo {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      align-content: center;
-    }
-
-    form.delego {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
     form.delego input[type=submit] {
-      width: calc(100% - 10px);
-    }
-
-    @media (min-width: 900px) {
-      form.delego input[type=submit] {
-        width: calc(50% - 10px);
-      }
+      width: 100%;
+      margin-bottom: 20px;
+      white-space: normal;
     }
 
   </style>
